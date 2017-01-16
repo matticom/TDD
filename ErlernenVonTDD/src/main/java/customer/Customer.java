@@ -1,17 +1,20 @@
 package customer;
 
 public class Customer {
-	int totalCharge;
+	double totalCharge;
+	Movie movie;
 	
 	public Customer() {
 		totalCharge = 0;
+		movie = new Movie();
 	}
 	
 	public void rentMovie(int daysRented) {
-		totalCharge = 2 * daysRented;
+		
+		totalCharge += movie.getCharge(daysRented);
 	}
 
-	public int getTotalCharge() {
+	public double getTotalCharge() {
 		return totalCharge;
 	}
 }
