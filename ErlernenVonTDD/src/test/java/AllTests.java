@@ -5,12 +5,14 @@ import org.junit.runners.Suite.SuiteClasses;
 import Euro.EuroTest;
 import customer.CustomerTest;
 import customer.MovieTest;
+import customer.RegularPriceTest;
 
 @RunWith(Suite.class)
-@SuiteClasses({
-	CustomerTest.class,
-	MovieTest.class,
-	EuroTest.class
+@SuiteClasses({ 
+	CustomerTest.class, 
+	MovieTest.class, 
+	EuroTest.class, 
+	RegularPriceTest.class
 })
 
 public class AllTests {

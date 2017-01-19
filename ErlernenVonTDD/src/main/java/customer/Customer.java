@@ -1,20 +1,25 @@
 package customer;
 
+import Euro.Euro;
+
 public class Customer {
-	double totalCharge;
+	Euro totalCharge;
 	Movie movie;
 	
 	public Customer() {
-		totalCharge = 0;
+		totalCharge = new Euro(0);
 		movie = new Movie();
 	}
 	
 	public void rentMovie(int daysRented) {
-		
-		totalCharge += movie.getCharge(daysRented);
+		if (daysRented == 0) {
+			return;
+		}
+		Euro thisMovie = movie.getCharge(daysRented);
+		totalCharge = totalCharge.plus(thisMovie);
 	}
 
-	public double getTotalCharge() {
+	public Euro getTotalCharge() {
 		return totalCharge;
 	}
 }
