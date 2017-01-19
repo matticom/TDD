@@ -1,18 +1,23 @@
 package customer;
 
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
 import Euro.Euro;
 
-public class MovieTest extends junit.framework.TestCase {
+public class MovieTest {
 
-	public void testBasePrice() {
-		Movie movie = new Movie();
-		assertEquals(new Euro(2.0), movie.getCharge(1));
-		assertEquals(new Euro(2.0), movie.getCharge(2));	
-	}
-	
-	public void testPricePerDay() {
-		Movie movie = new Movie();
+	@Test
+	public void testUsingNewReleasePrice() {
+		Movie movie = new Movie("Fight Club", Price.NEWRELEASE);
 		assertEquals(new Euro(3.75), movie.getCharge(3));
-		assertEquals(new Euro(5.50), movie.getCharge(4));	
+	}
+
+	@Test
+	public void testSettingNewPrice() {
+		Movie movie = new Movie("Brazil", Price.NEWRELEASE);
+		movie.setPrice(Price.REGULAR);
+		assertEquals(new Euro(1.50), movie.getCharge(3));
 	}
 }

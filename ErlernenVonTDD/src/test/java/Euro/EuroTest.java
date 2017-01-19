@@ -56,4 +56,9 @@ public class EuroTest {
 		assertEquals(new Euro(2.00), two);
 	}
 
+	@Test
+	public void testFormatting() {
+		assertEquals("2,00", two.format());
+	}
+
 }

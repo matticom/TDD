@@ -1,5 +1,8 @@
 package Euro;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public final class Euro {
 	private final long cents;
 
@@ -24,6 +27,13 @@ public final class Euro {
 
 	public Euro plus(Euro other) { // was bei negativen Beträgen?
 		return new Euro(cents + other.cents);
+	}
+	
+	public String format() {
+//		Locale.setDefault(new Locale("us"));
+		NumberFormat format = NumberFormat.getInstance();
+		format.setMinimumFractionDigits(2);
+		return format.format(getAmount());
 	}
 
 	@Override
