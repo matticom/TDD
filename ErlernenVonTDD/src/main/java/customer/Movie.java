@@ -5,17 +5,17 @@ import Euro.Euro;
 public class Movie {
 
 	private String title;
-	private Price price;
+	private IPrice price;
 	
 	public Movie() {
 	}
 	
-	public Movie(String title, Price price) {
+	public Movie(String title, IPrice price) {
 		this.title = title;
 		this.price = price;
 	}
 
-	public void setPrice(Price price) {
+	public void setPrice(IPrice price) {
 		this.price = price;
 	}
 	

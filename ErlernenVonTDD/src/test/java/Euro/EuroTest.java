@@ -23,6 +23,8 @@ public class EuroTest {
 	public void testRounding() {
 		Euro rounded = new Euro(1.995);
 		assertEquals("amount not rounded", two, rounded);
+		assertEquals(new Euro(0.49), new Euro(0.494));
+		assertEquals(new Euro(0.50), new Euro(0.495));
 	}
 
 	@Test

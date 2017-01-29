@@ -15,7 +15,7 @@ public class CustomerTest extends junit.framework.TestCase {
 	public void setUp() {
 		customer = new Customer();
 
-		buffalo66 = new Movie("Buffalo 66", Price.NEWRELEASE);
+		buffalo66 = new Movie("Buffalo 66", new StubPrice());
 		jungleBook = new Movie("Das Dschungelbuch", Price.REGULAR);
 		pulpFiction = new Movie("Pulp Fiction", Price.NEWRELEASE);
 	}

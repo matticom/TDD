@@ -2,10 +2,10 @@ package customer;
 
 import Euro.Euro;
 
-public class Price {
+public class Price implements IPrice {
 	
-	public final static Price NEWRELEASE = new Price(new Euro(2.00), new Euro(1.75), 2);
-	public final static Price REGULAR =	new Price(new Euro(1.50), new Euro(1.50), 3);
+	public final static IPrice NEWRELEASE = new Price(new Euro(2.00), new Euro(1.75), 2);
+	public final static IPrice REGULAR =	new Price(new Euro(1.50), new Euro(1.50), 3);
 	
 	private Euro basePrice = new Euro(1.50);
 	private Euro pricePerDay = new Euro(1.50);
@@ -17,6 +17,7 @@ public class Price {
 		this.daysDiscounted = daysDiscounted;
 	}
 
+	@Override
 	public Euro getCharge(int daysRented) {
 		if (daysRented <= daysDiscounted)
 			return basePrice;
