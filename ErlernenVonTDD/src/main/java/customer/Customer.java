@@ -21,13 +21,17 @@ public class Customer {
 		rentals.add(new Rental(movie, daysRented));
 	}
 
-	public String printStatement() {
-		StringBuilder result = new StringBuilder("");
+	public void printStatement(IPrinter printer) throws OutOfPaperException {
 		for (Rental rental : rentals) {
-			result.append("\t" + rental.getMovieTitle() + "\t" + rental.getCharge().format() + "\n");
+			printer.tab();
+			printer.print(rental.getMovieTitle());
+			printer.tab();
+			printer.print(rental.getCharge().format());
+			printer.crlf();
 		}
-		result.append("Gesamt: " + getTotalCharge().format() + "\n");
-		return result.toString();
+		printer.print("Gesamt: " + getTotalCharge().format());
+		printer.crlf();
+		printer.cutPaper();
 	}
 
 	public Euro getTotalCharge() {
