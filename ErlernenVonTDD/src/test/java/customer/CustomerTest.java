@@ -1,15 +1,14 @@
 package customer;
 
+import static org.junit.Assert.*;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import com.mockobjects.ExpectationCounter;
-import com.mockobjects.ExpectationList;
-import com.mockobjects.util.Verifier;
 
 import Euro.Euro;
 
-public class CustomerTest extends junit.framework.TestCase{
+public class CustomerTest {
 
 	private Customer customer;
 

@@ -24,5 +24,5 @@ public class MovieTest {
 	public void testUsingStubPrice() {
 		Movie movie = new Movie("Stub Movie", new StubPrice());
 		assertEquals(new Euro(2.00), movie.getCharge(3));
-		}
+	}
 }
